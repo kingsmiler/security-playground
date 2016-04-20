@@ -3,8 +3,12 @@ package org.xman.security.sha;
 
 import org.junit.Test;
 
+import java.util.Arrays;
+
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
+import static org.xman.security.sha.JdkShaCoder.SHA;
+import static org.xman.security.sha.JdkShaCoder.encodeSHA;
 
 public class SHACoderTest {
 
@@ -162,6 +166,14 @@ public class SHACoderTest {
 
         // 校验
         assertEquals(data1, data2);
+    }
+
+    @Test
+    public void testSha() throws Exception {
+        String pass = "pass";
+        System.out.println("转换前：" + pass);
+        System.out.println("转换后1：" + Arrays.toString(encodeSHA(pass.getBytes())));
+        System.out.println("转换后2：" + SHA(pass));
     }
 
 }

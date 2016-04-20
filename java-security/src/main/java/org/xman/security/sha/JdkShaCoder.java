@@ -3,6 +3,7 @@ package org.xman.security.sha;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.Arrays;
 
 public class JdkShaCoder {
 
